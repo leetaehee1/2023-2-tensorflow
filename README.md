@@ -145,10 +145,18 @@ plt.show()
   ![labelcases](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/91d96113-805f-4f19-9659-76e2a2c2d14c)  
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
-- 학습과 검증 데이터셋 분리
-- 학습 데이터의 구성
+- 학습과 검증 데이터셋 분리  
+  ![학습검증](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/58fa1264-00ef-4d4e-8895-8dd9ce8d5115)
+
+- 학습 데이터의 구성  
+  학습 데이터 10개
+  ![image](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/9e12696c-f853-4bfc-8dcf-e3aa829c2850)
+
+  검증 데이터 10개  
+  ![labeldata](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/337faf0b-3f82-4121-91ac-d48e1c43e9f8)
 
 # 3. 재학습 결과
+
 ## 3.1 개발 환경
  - pycharm, ...
  - [requirements.txt](https://github.com/leetaehee1/Koelectra_SteamReview/blob/main/requirements.txt)
