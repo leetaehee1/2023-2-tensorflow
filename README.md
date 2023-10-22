@@ -43,7 +43,7 @@
 ```
 import pandas as pd
 
-data = pd.read_table('new.txt')
+data = pd.read_table('steam.txt')
 
 print("데이터의 개수 : ", len(data))
 
