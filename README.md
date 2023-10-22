@@ -150,8 +150,8 @@ plt.show()
 
 # 3. 재학습 결과
 ## 3.1 개발 환경
- - pycharm, python, torch, pandas, ...
- - 
+ - pycharm, ...
+ - [requirements.txt](https://github.com/leetaehee1/Koelectra_SteamReview/blob/main/requirements.txt)
 ## 3.2 KOELECTRA fine-tuning
 ## 3.3 학습 결과 그래프
 
