@@ -22,7 +22,7 @@
  - 필요에 따라서는 적절한 그림을 그려 표현(ppt 등) -->
 
 ## 1.2 데이터 및 모델 개요
-데이터는 **bab2min**의 Github - corpus 에서 제공하는 [스팀 게임 리뷰](https://github.com/bab2min/corpus/tree/master/sentiment)를 활용[2]하여, 총 10만 건의 데이터에 대해서 사전 학습 언어 모델의 재학습(fine-tuning)을 수행한다. 
+데이터는 **bab2min**의 Github - corpus 에서 공유하는 [스팀 게임 리뷰](https://github.com/bab2min/corpus/tree/master/sentiment)를 활용[2]하여, 총 10만 건의 데이터에 대해서 사전 학습 언어 모델의 재학습(fine-tuning)을 수행한다. 
 
 ### 모델 개요
 
@@ -39,6 +39,10 @@
 |재미있었습니다.|---|1|
 
 # 2. 데이터
+## 감성 분석 순서  
+![634](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/4837a454-600b-4542-a845-4f29be85674b)
+
+
 ## 2.1 전체 데이터 소스
 ```
 import pandas as pd
