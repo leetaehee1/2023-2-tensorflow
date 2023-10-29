@@ -1,5 +1,5 @@
 # <p align="center"> KOELECTRA를 활용한 스팀 게임 리뷰 감성 분석 </p>
-<p align="center"><img src="https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/95b2d3fe-9bc0-4584-8b5f-47b3995bfe27" width="750px" height="360px"></p>  
+<p align="center"><img src="https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/95b2d3fe-9bc0-4584-8b5f-47b3995bfe27" width="750px" height="380px"></p>  
 
 # 1. 개요
 이번 프로젝트에서는 한국어 자연어 처리 모델인 [KOELECTRA](https://github.com/monologg/KoELECTRA)를 활용하여 **[스팀](https://namu.wiki/w/Steam)** 게임 리뷰의 긍부정 예측을 하고자 한다.  
@@ -22,9 +22,22 @@
  - 필요에 따라서는 적절한 그림을 그려 표현(ppt 등) -->
 
 ## 1.2 데이터 및 모델 개요
-데이터는 **bab2min**의 Github - corpus 에서 공유하는 [스팀 게임 리뷰](https://github.com/bab2min/corpus/tree/master/sentiment)를 활용[2]하여, 총 10만 건의 데이터에 대해서 사전 학습 언어 모델의 재학습(fine-tuning)을 수행한다. 
+데이터는 **bab2min**의 Github - corpus 에서 공유하는 [스팀 게임 리뷰](https://github.com/bab2min/corpus/tree/master/sentiment)를 활용[2]하여, 총 10만 건의 데이터에 대해서 사전 학습 언어 모델의 재학습(fine-tuning)을 수행한다.   
+게임 유통 서비스인 Steam의 각종 게임에 달린 한국어 리뷰를 수집한 것이다. 게임 커뮤니티 특성 상 비속어 및 은어가 많이 사용된 것이 특징이다. 데이터는 탭으로 분리되어 있으며, 첫번째 필드에는 긍/부정(1=긍정, 0=부정), 두번째 필드에는 리뷰 텍스트가 위치합니다. 긍정과 부정의 비율이 1:1에 가깝도록 샘플링된 자료이다.
 
-### 모델 개요
+### 데이터 분포
+
+| |건수|
+|---|---|
+|긍정|49,996|
+|부정|50,004|
+|합계|100,000|
+
+# 2. 데이터
+## 감성 분석 순서  
+![634](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/4837a454-600b-4542-a845-4f29be85674b)
+
+### 데이터 보기
 
 | 입력          |모델|출력|
 |-------------|---|---|
@@ -37,11 +50,6 @@
 |시간 때우기에 좋음.. 도전과제는 50시간이면 다 깰 수 있어요|---|1|
 |역시 재미있네요 전작에서 할수 없었던 자유로운 덱 빌딩도 좋네요^^|---|1|
 |재미있었습니다.|---|1|
-
-# 2. 데이터
-## 감성 분석 순서  
-![634](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/4837a454-600b-4542-a845-4f29be85674b)
-
 
 ## 2.1 전체 데이터 소스
 ```
