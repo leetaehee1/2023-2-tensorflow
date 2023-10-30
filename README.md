@@ -100,9 +100,10 @@ plt.show()
 
 ## 2.3 데이터 전처리
 - 입력 데이터의 전처리 과정
-  
+  ```
   텍스트 파일을 읽어 데이터프레임으로 변환 -> 탭으로 열 구분 -> 데이터프레임을 텍스트파일로 저장  
   *document와 label의 열을 두개가 아닌 하나로 인식하기 때문*
+  ```
   ```
   import pandas as pd
 
@@ -155,7 +156,12 @@ plt.show()
   data['label'].value_counts().plot(kind='bar')
   plt.show()
   ```
-  ![labelcases](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/91d96113-805f-4f19-9659-76e2a2c2d14c)  
+
+  |label||
+  |---|---|
+  |0|49,957|
+  |1|49,936|
+  
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
 - 총 10만개의 데이터 중 학습할 데이터 1만개 추출
@@ -185,12 +191,19 @@ plt.show()
   ```
 
 - 데이터 확인  
-  ![data_10000](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/62daf4f8-21df-4dee-aa2c-77d86a95ac02)
+  <!-- ![data_10000](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/62daf4f8-21df-4dee-aa2c-77d86a95ac02) -->
 
+  |학습 데이터의 수|10000|
+  |---|---|
+  |긍정 리뷰 수|4,991|
+  |부정 리뷰 수|5,009|
 
 - 학습과 검증 데이터셋 분리    
-  ![데이터셋분리](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/dc9625fb-78ea-4812-b2d8-fdf27f063df7)
+  <!-- ![데이터셋분리](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/dc9625fb-78ea-4812-b2d8-fdf27f063df7) -->
 
+  |학습 데이터 수|8,000|
+  |---|---|
+  |검증 데이터 수|2,000|
 - 학습 데이터의 구성  
   학습 데이터 10개
   ![image](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/9e12696c-f853-4bfc-8dcf-e3aa829c2850)
