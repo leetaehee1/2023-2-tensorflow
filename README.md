@@ -118,7 +118,7 @@ plt.show()
   # print(df)
   ```
   
-- 학습에 활용할 데이터의 양
+- 전체 데이터의 양
   ```
   print("데이터의 개수 : ", len(data))
   ```
@@ -153,7 +153,7 @@ plt.show()
   ![labelcases](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/91d96113-805f-4f19-9659-76e2a2c2d14c)  
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
-- 총 10만개의 데이터 중 1만개의 데이터만 추출
+- 총 10만개의 데이터 중 학습할 데이터 1만개 추출
   ```
   import random
 
