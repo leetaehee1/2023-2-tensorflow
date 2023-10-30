@@ -153,8 +153,38 @@ plt.show()
   ![labelcases](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/91d96113-805f-4f19-9659-76e2a2c2d14c)  
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
-- 학습과 검증 데이터셋 분리  
-  ![학습검증](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/58fa1264-00ef-4d4e-8895-8dd9ce8d5115)
+- 총 10만개의 데이터 중 1만개의 데이터만 추출
+  ```
+  import random
+
+  import pandas as pd
+  
+  data = pd.read_table('steam.txt')
+  print(data)
+  
+  # 데이터프레임의 행 수를 가져옵니다
+  num_rows = len(data)
+  
+  # 1만개의 무작위 행 인덱스를 생성
+  random_indices = random.sample(range(num_rows), 10000)
+  
+  # 무작위로 선택된 행을 추출
+  random_sample = data.iloc[random_indices]
+  
+  # 인덱스를 오름차순으로 정렬
+  random_sample = random_sample.sort_index(ascending=True)
+  print(random_sample)
+
+  # 데이터 저장
+  random_sample.to_csv('steam_10000.txt', index=False)
+  ```
+
+- 데이터 확인  
+  ![data_10000](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/62daf4f8-21df-4dee-aa2c-77d86a95ac02)
+
+
+- 학습과 검증 데이터셋 분리    
+  ![데이터셋분리](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/dc9625fb-78ea-4812-b2d8-fdf27f063df7)
 
 - 학습 데이터의 구성  
   학습 데이터 10개
