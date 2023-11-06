@@ -223,5 +223,6 @@ plt.show()
 
 ## 참고문헌
 steam 이미지 : https://cdn.cloudflare.steamstatic.com/store/home/store_home_share.jpg  
+[1] 리뷰가 비디오 게임의 성과에 미치는 영향 : https://s-space.snu.ac.kr/handle/10371/166332  
 [2] Github / bab2min - corpus의 Steam.txt 자료 : https://github.com/bab2min/corpus/tree/master/sentiment  
 [3] Koelectra 모델에 대한 참고문헌 : https://github.com/monologg/KoELECTRA
