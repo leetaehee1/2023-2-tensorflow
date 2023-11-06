@@ -11,7 +11,7 @@
 
 이런 게임 리뷰를 통해 사람들은 리뷰를 읽고 게임의 내용과 품질을 평가한 후 게임을 구매할지 여부를 결정하거나, 재미요소, 게임플레이, 스토리, 그래픽 품질 등을 파악하고 잘 작성된 리뷰를 통해 잘못 선택한 게임으로 인한 시간과 자원의 낭비를 피하고 **자신이 즐길만한 만족스러운 게임**을 선택할 수 있다.
 
-이로 인해 게임 리뷰는 게임 커뮤니티와 산업에 중요한 역할을 하며, 게임 소비자와 게임 개발자 간의 상호작용은 게임의 품질 향상과 그들의 작품을 개선하고 발전시키는데 도움을 준다.
+이로 인해 게임 리뷰는 게임 커뮤니티와 산업에 중요한 역할을 하며, 게임 소비자와 게임 개발자 간의 상호작용은 게임의 품질 향상과 그들의 작품을 개선하고 발전시키는데 도움을 준다. [리뷰가 비디오 게임에 미치는 영향](https://s-space.snu.ac.kr/handle/10371/166332)
 
 
 
@@ -185,9 +185,8 @@ plt.show()
   # 인덱스를 오름차순으로 정렬
   random_sample = random_sample.sort_index(ascending=True)
   print(random_sample)
-
-  # 데이터 저장
-  random_sample.to_csv('steam_10000.txt', index=False)
+  
+  random_sample.to_csv('steam_10000.txt', sep='\t', index=False)
   ```
 
 - 데이터 확인  
@@ -206,10 +205,9 @@ plt.show()
   |학습 데이터 수|8,000|
   |검증 데이터 수|2,000|
 - 학습 데이터의 구성  
-  학습 데이터 10개
   ![image](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/9e12696c-f853-4bfc-8dcf-e3aa829c2850)
 
-  검증 데이터 10개  
+  
   ![labeldata](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/337faf0b-3f82-4121-91ac-d48e1c43e9f8)
 
 # 3. 재학습 결과
