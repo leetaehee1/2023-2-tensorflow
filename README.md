@@ -200,6 +200,15 @@ plt.show()
   
   ![labeldata](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/337faf0b-3f82-4121-91ac-d48e1c43e9f8)
 
+  #### 데이터 1000건 학습
+  |데이터 분리||
+  |---|---|
+  |학습 데이터 수|800|
+  |검증 데이터 수|200|
+  - 데이터 검증 정확도
+
+  ![1000](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/122cacd1-e986-4869-90b2-83d473f1773b)
+
 # 3. 재학습 결과
 
 ## 3.1 개발 환경
