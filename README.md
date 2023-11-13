@@ -40,7 +40,6 @@
 
 | 입력          |모델|출력|
 |-------------|---|---|
-|**Document**|---|**label**|
 | 스팀 게임 리뷰 문장|[KOELECTRA small](https://github.com/monologg/KoELECTRA) [3]|부정(0), 긍정(1) |
 |노래가 너무 적음|---|0|
 |돌겠네 진짜. 황숙아, 어크 공장 그만 돌려라. 죽는다.|---|0|
@@ -57,6 +56,15 @@
 
 
 ## 2.1 전체 데이터 소스
+
+| 입력          |모델|출력|
+|-------------|---|---|
+| 스팀 게임 리뷰 문장|[KOELECTRA small](https://github.com/monologg/KoELECTRA) [3]|부정(0), 긍정(1) |
+|노래가 너무 적음|---|0|
+|돌겠네 진짜. 황숙아, 어크 공장 그만 돌려라. 죽는다.|---|0|
+|막노동 체험판 막노동 하는사람인데 장비를 내가 사야돼 뭐지|---|1|
+|차악!차악!!차악!!! 정말 이래서 왕국을 되찾을 수 있는거야??|---|1|
+
 ```
 import pandas as pd
 
@@ -93,6 +101,21 @@ plt.show()
 ```
 
 ## 2.2 탐색적 데이터 분석
+- **label** 분류 및 시각화
+  ```
+  import matplotlib.pyplot as plt
+  
+  print(data['label'].value_counts())
+  data['label'].value_counts().plot(kind='bar')
+  plt.show()
+  ```
+
+  |label||
+  |---|---|
+  |0|49,957|
+  |1|49,936|
+  
+  ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
 ## 2.3 데이터 전처리
 - 입력 데이터의 전처리 과정
@@ -138,21 +161,6 @@ plt.show()
   ```
   ![del_nullandDupl](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/1300b005-3fa6-41ca-ad31-ca720d1583b9)
   
-- **label** 분류 및 시각화
-  ```
-  import matplotlib.pyplot as plt
-  
-  print(data['label'].value_counts())
-  data['label'].value_counts().plot(kind='bar')
-  plt.show()
-  ```
-
-  |label||
-  |---|---|
-  |0|49,957|
-  |1|49,936|
-  
-  ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
 - 총 10만개의 데이터 중 학습할 데이터 1만개 추출
   ```
@@ -194,13 +202,15 @@ plt.show()
   |---|---|
   |학습 데이터 수|8,000|
   |검증 데이터 수|2,000|
+  
 - 학습 데이터의 구성  
   ![image](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/9e12696c-f853-4bfc-8dcf-e3aa829c2850)
-
   
   ![labeldata](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/337faf0b-3f82-4121-91ac-d48e1c43e9f8)
 
-  #### 데이터 1000건 학습
+#### 데이터 1000건 학습
+![1000all](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/16bdf420-88ef-4062-abf8-098afa500659)
+
   |데이터 분리||
   |---|---|
   |학습 데이터 수|800|
