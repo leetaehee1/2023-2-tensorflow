@@ -77,10 +77,6 @@ data = data.dropna(how='any')
 print("데이터의 개수 (결측치 제거): ", len(data))
 print()
 
-# document 열에서 한글 문자, 자음, 모음, 공백 문자를 제외한 모든 문자를 삭제하고, 한글 텍스트만 남기기
-data['document'] = data['document'].str.replace("[^ㄱ-ㅎㅏ-ㅣ가-힣 ]","")
-print(data[:5])
-
 # label 분류
 print(data['label'].value_counts())
 
@@ -141,12 +137,6 @@ plt.show()
   print()
   ```
   ![del_nullandDupl](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/1300b005-3fa6-41ca-ad31-ca720d1583b9)
-
-- 특수문자나 숫자 제거후 **한글 텍스트만** 남기기
-  ```
-  # document 열에서 한글 문자, 자음, 모음, 공백 문자를 제외한 모든 문자를 삭제하고, 한글 텍스트만 남기기
-  data['document'] = data['document'].str.replace("[^ㄱ-ㅎㅏ-ㅣ가-힣 ]","")  
-  ```
   
 - **label** 분류 및 시각화
   ```
