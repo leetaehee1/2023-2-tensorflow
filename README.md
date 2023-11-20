@@ -106,7 +106,7 @@ plt.show()
   |0|49,957|
   |1|49,936|
   
-  ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
+  ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)    
   라벨을 분류하고 시각화를 해봤을때 0(부정) 49,957, 1(긍정) 49,936개로 적당하게 절반 나뉘어져 있다.
 
  - 전체 데이터의 문장길이 분포 확인
