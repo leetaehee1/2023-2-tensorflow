@@ -167,7 +167,7 @@ plt.show()
   ```
   print("데이터의 개수 : ", len(data))
   ```
-  ![data_size](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/38f37b78-12bd-42f5-aeb4-09d8bd444eaa)
+  ![data_size](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/38f37b78-12bd-42f5-aeb4-09d8bd444eaa)   
   전체 데이터의 양은 총 100,000개가 있다.
   
 - 데이터 중복, 결측치 제거
@@ -181,6 +181,7 @@ plt.show()
   print()
   ```
   ![del_nullandDupl](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/1300b005-3fa6-41ca-ad31-ca720d1583b9)
+  서로 다른 데이터의 개수는 99,893개이고, 중복과 결측치를 제거한 결과도 동일하게 99,893개이다.
   
 
 - 총 10만개의 데이터 중 학습할 데이터 1만개 추출
