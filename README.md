@@ -100,13 +100,13 @@ plt.show()
   print(data['label'].value_counts())
   data['label'].value_counts().plot(kind='bar')
   plt.show()
-  ```
-
+  ```    
   |label||
   |---|---|
   |0|49,957|
   |1|49,936|
   
+  0(부정) 49,957, 1(긍정) 49,936개로 반반 적당하게 나뉘어져 있다.
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
  - 전체 데이터의 문장길이 분포 확인
@@ -134,13 +134,14 @@ plt.show()
    plt.ylabel('빈도 수')
    plt.show()
    ```   
-   ![문장길이의분포](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/7fecdf0c-71d4-4122-aec7-e7bf8518021d)
+   ![문장길이의분포](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/7fecdf0c-71d4-4122-aec7-e7bf8518021d)   
+   문장의 최소 길이인 1부터 시작해서 5씩 늘려가며 분포를 나타내 1부터 6까지 약 35,000개, 6부터 11까지 약 25,000개, ... 로 문장 길이의 분포를 나타냈다.
 
 ## 2.3 데이터 전처리
 - 입력 데이터의 전처리 과정
   ```
   텍스트 파일을 읽어 데이터프레임으로 변환 -> 탭으로 열 구분 -> 데이터프레임을 텍스트파일로 저장  
-  *document와 label의 열을 두개가 아닌 하나로 인식하기 때문*
+  document와 label의 열을 두개가 아닌 하나로 인식하기 때문
   ```
   ```
   import pandas as pd
@@ -167,6 +168,7 @@ plt.show()
   print("데이터의 개수 : ", len(data))
   ```
   ![data_size](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/38f37b78-12bd-42f5-aeb4-09d8bd444eaa)
+  전체 데이터의 양은 총 100,000개가 있다.
   
 - 데이터 중복, 결측치 제거
   ```
