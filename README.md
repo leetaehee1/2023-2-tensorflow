@@ -106,8 +106,8 @@ plt.show()
   |0|49,957|
   |1|49,936|
   
-  0(부정) 49,957, 1(긍정) 49,936개로 반반 적당하게 나뉘어져 있다.
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
+  라벨을 분류하고 시각화를 해봤을때 0(부정) 49,957, 1(긍정) 49,936개로 적당하게 절반 나뉘어져 있다.
 
  - 전체 데이터의 문장길이 분포 확인
    ```
@@ -180,7 +180,7 @@ plt.show()
   print("데이터의 개수 (결측치 제거): ", len(data))
   print()
   ```
-  ![del_nullandDupl](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/1300b005-3fa6-41ca-ad31-ca720d1583b9)
+  ![del_nullandDupl](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/1300b005-3fa6-41ca-ad31-ca720d1583b9)   
   서로 다른 데이터의 개수는 99,893개이고, 중복과 결측치를 제거한 결과도 동일하게 99,893개이다.
   
 
