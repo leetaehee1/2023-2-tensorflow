@@ -117,6 +117,33 @@ plt.show()
   
   ![Figure_1](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/471992fb-6f27-4f90-af89-82b791d9b396)
 
+ - 전체 데이터의 문장길이 분포 확인
+   ```
+   import random
+   import pandas as pd
+   import matplotlib.pyplot as plt
+   from matplotlib import font_manager, rc
+   
+   # 폰트 설정
+   font_path = "C:/Windows/Fonts/malgun.ttf"  # 한글 폰트 경로 (Windows)
+   font_name = font_manager.FontProperties(fname=font_path).get_name()
+   rc('font', family=font_name)
+   
+   # 데이터 불러오기
+   data = pd.read_table('steam.txt')
+   
+   # 각 행에 대한 문장 길이 계산
+   data['sentence_length'] = data['document'].apply(lambda x: len(str(x).split()))
+   
+   # 히스토그램 그리기
+   plt.hist(data['sentence_length'], bins=20, color='blue', edgecolor='black', alpha=0.7)
+   plt.title('문장 길이 분포')
+   plt.xlabel('문장 길이')
+   plt.ylabel('빈도 수')
+   plt.show()
+   ```   
+   ![문장길이의분포](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/3f13eb6b-6c0e-420a-860e-cb915f489ffc)
+
 ## 2.3 데이터 전처리
 - 입력 데이터의 전처리 과정
   ```
