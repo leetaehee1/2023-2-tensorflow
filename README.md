@@ -290,15 +290,14 @@ plt.show()
 
   위에 10,000건을 추출했을때 정확도가 낮아 10,000건보다 적은 1,000건을 추출하여 다시 검증을 시도했더니 0.745로 보다 조금 낫다는 것을 볼 수 있다.
   <!-- ![1000](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/122cacd1-e986-4869-90b2-83d473f1773b) -->
-## 3.1 개발 환경
- - pycharm, ...
- - [requirements.txt](https://github.com/leetaehee1/Koelectra_SteamReview/blob/main/requirements.txt)
-## 3.2 KOELECTRA fine-tuning
-## 3.3 학습 결과 그래프
+
+## 3.1 학습 결과 그래프
 
 # 4. 배운점
 
-
+#### 개발 환경
+ - pycharm, ...
+ - [requirements.txt](https://github.com/leetaehee1/Koelectra_SteamReview/blob/main/requirements.txt)
 ## 참고문헌
 steam 이미지 : https://cdn.cloudflare.steamstatic.com/store/home/store_home_share.jpg  
 [1] 리뷰가 비디오 게임의 성과에 미치는 영향 : https://s-space.snu.ac.kr/handle/10371/166332  
