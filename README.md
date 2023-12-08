@@ -46,7 +46,7 @@
 ## 감성 분석 순서  
 ![634](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/4837a454-600b-4542-a845-4f29be85674b)
 
-## 2.1 전체 데이터 소스
+## 2.1 데이터 소스
 
 | 입력          |출력|
 |-------------|---|
@@ -56,51 +56,12 @@
 |막노동 체험판 막노동 하는사람인데 장비를 내가 사야돼 뭐지|1|
 |차악!차악!!차악!!! 정말 이래서 왕국을 되찾을 수 있는거야??|1|
 |...|...|
-
-```
-import pandas as pd
-
-data = pd.read_table('steam.txt')
-
-print("데이터의 개수 : ", len(data))
-
-print(data.head())
-
-print("서로 다른 데이터의 수",data['document'].nunique())
-
-# 중복, 결측치 제거
-data.drop_duplicates(subset=['document'], inplace=True)
-print("데이터의 개수 (중복제거): ", len(data))
-
-print(data.isnull().values.any()) # 결측치 (Null, NaN)가 있다면 True
-data = data.dropna(how='any')
-print("데이터의 개수 (결측치 제거): ", len(data))
-print()
-
-# label 분류
-print(data['label'].value_counts())
-
-# 시각화 작업
-import matplotlib.pyplot as plt
-
-# 변환된 데이터에서 각 값의 개수를 세어 그래프로 표시
-data['label'].value_counts().plot(kind='bar', rot=0) # rot은 rotation = 0 으로 하여 글자 가로로 나오게함
-plt.xlabel('Document') # x축은 document
-plt.ylabel('Label') # y축은 label
-
-# 그래프 시각화
-plt.show()
-```
+|     노잼이네요... 30분하고 지웠어요...|0|
+| 야생을 사랑하는 사람들을 위한 짧지만 여운이 남는 이야기. 영어는 그리 어렵지 않습니다.|1|
+ |                 한국의 메탈레이지를 떠오르게한다 진짜 손맛으로 하는게임|1|
 
 ## 2.2 탐색적 데이터 분석
 - **label** 분류 및 시각화
-  ```
-  import matplotlib.pyplot as plt
-  
-  print(data['label'].value_counts())
-  data['label'].value_counts().plot(kind='bar')
-  plt.show()
-  ```    
   |label||
   |---|---|
   |0|49,957|
@@ -110,58 +71,13 @@ plt.show()
   라벨을 분류하고 시각화를 해봤을때 0(부정) 49,957, 1(긍정) 49,936개로 적당하게 절반 나뉘어져 있다.
 
  - 전체 데이터의 문장길이 분포 확인
-   ```
-   import random
-   import pandas as pd
-   import matplotlib.pyplot as plt
-   from matplotlib import font_manager, rc
    
-   # 폰트 설정
-   font_path = "C:/Windows/Fonts/malgun.ttf"  # 한글 폰트 경로 (Windows)
-   font_name = font_manager.FontProperties(fname=font_path).get_name()
-   rc('font', family=font_name)
-   
-   # 데이터 불러오기
-   data = pd.read_table('steam.txt')
-   
-   # 각 행에 대한 문장 길이 계산
-   data['sentence_length'] = data['document'].apply(lambda x: len(str(x).split()))
-   
-   # 히스토그램 그리기
-   plt.hist(data['sentence_length'], bins=20, color='blue', edgecolor='black', alpha=0.7)
-   plt.title('문장 길이 분포')
-   plt.xlabel('문장 길이')
-   plt.ylabel('빈도 수')
-   plt.show()
-   ```   
    ![문장길이의분포](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/7fecdf0c-71d4-4122-aec7-e7bf8518021d)   
    문장의 최소 길이인 1부터 시작해서 5씩 늘려가며 분포를 나타내 1부터 6까지 약 35,000개, 6부터 11까지 약 25,000개, ... 로 문장 길이의 분포를 나타냈다.
 
 ## 2.3 데이터 전처리
 - 입력 데이터의 전처리 과정
-  ```
-  텍스트 파일을 읽어 데이터프레임으로 변환 -> 탭으로 열 구분 -> 데이터프레임을 텍스트파일로 저장  
-  document와 label의 열을 두개가 아닌 하나로 인식하기 때문
-  ```
-  ```
-  import pandas as pd
-
-  data = {
-      'label': [],
-      'document': []
-  }
-  
-  with open('steam.txt', 'r', encoding='utf-8') as file:
-      for line in file:
-          line = line.strip().split('\t')  # 탭으로 열을 구분
-          if len(line) == 2:
-              data['label'].append(int(line[0]))
-              data['document'].append(line[1])
-  
-  df = pd.DataFrame(data)
-  df.to_csv('steam.txt', sep='\t', index=False)
-  # print(df)
-  ```
+  steam.txt 파일의 데이터를 읽어 처리한 후 동일한 파일에 탭으로 구분된 형식으로 저장함.
   
 - 전체 데이터의 양
   ```
@@ -280,7 +196,7 @@ plt.show()
   검증에 걸린 시간 : 0:03:12
   ```
 
-  무작위 10,000건을 추출하여 데이터 검증을 시도했을때 정확도가 0.499가 나오는것을 보아 데이터 상태가 별로 좋지 않다는 것을 볼 수 있다.
+  무작위 10,000건을 추출하여 데이터 검증을 시도했을때 정확도가 49.9%가 나오는것을 보아 데이터 상태가 별로 좋지 않다는 것을 볼 수 있다.
   
 - 1,000건 추출한 데이터 검증 정확도
   ```
@@ -288,7 +204,7 @@ plt.show()
   검증 정확도 : 0.7455357142857143
   ```
 
-  위에 10,000건을 추출했을때 정확도가 낮아 10,000건보다 적은 1,000건을 추출하여 다시 검증을 시도했더니 0.745로 보다 조금 낫다는 것을 볼 수 있다.
+  위에 10,000건을 추출했을때 정확도가 낮아 10,000건보다 적은 1,000건을 추출하여 다시 검증을 시도했더니 정확도가 74.5%로 보다 조금 낫다는 것을 볼 수 있다.
   <!-- ![1000](https://github.com/leetaehee1/Koelectra_SteamReview/assets/79897716/122cacd1-e986-4869-90b2-83d473f1773b) -->
 
 ## 3.1 학습 결과 그래프
